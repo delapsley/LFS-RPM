@@ -1,7 +1,7 @@
 #!/bin/bash
 #-----------------------------------------------------------------------------
 #	  Title: installer.sh
-#	   Date: 2018-09-09
+#	   Date: 2019-05-22
 #	Version: 1.0
 #	 Author: baho-utot@columbus.rr.com
 #	Options:
