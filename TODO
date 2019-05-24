@@ -1,0 +1,38 @@
+
+Read base.spec to get list of packages to install
+
+BASE.SPEC GENERATOR:
+	TODO for base.sh
+	Make a base.spec generator
+		list= $( ls rpm dir )
+		for i in $list; do
+			case $i in
+				filespec*)	;;
+				*)		LIST+="Requires:	${i} " ;;
+			esac
+		done
+		write header
+		write requires
+		write end
+	then build base package
+
+RPM PACKAGE INSTALLER:
+	fetch package name start with base ( sort unique )
+	determine binary package name insert into name = ${REPOPATH}/package name-* to process
+	do until - process names, de dupe names
+		requirements =  $( rpm -qp --requires	${RPMS}/${RPM_ARCH}/${RPM_BINARY}):  > ${REQUIRES}/${RPM_NAME}	2>&1 || true
+		work string = $( rpm <name> requirements )
+		determine requires [ rpm -qp --requires <filespec> ]	if / then filespec add to rpm list
+		determine requires [ rpm -qp --requires <libary ] ]	if ( then library  add to rpm list
+		determine requires [ rpm -qp --requires <package> ]	else package add to rpm list
+		binary name = strip current name from list of package names
+	no more
+	LIST+="${REPOPATH}/${i##Requires:}* "
+	rpm -qp --requires	${RPMS}/${RPM_ARCH}/${RPM_BINARY} > ${REQUIRES}/${RPM_NAME}	2>&1 || true
+	# rpm -q --whatprovides [file name]
+	for i in ${LIST}; do
+		find requires
+		msg_line "installing: ${i} :"
+		rpm --upgrade --verbose --hash --noscripts --root ${ROOTPATH} --dbpath ${DBPATH} "${REPOPATH}/${i}-*"
+		msg_success
+	done

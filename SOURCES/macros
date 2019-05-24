@@ -1,0 +1,25 @@
+#
+#	System settings
+#
+%_cppflags	-D_FORTIFY_SOURCE=2
+%_cflags	-march=x86-64 -mtune=generic -O2 -pipe -fno-plt
+%_cxxflags	-march=x86-64 -mtune=generic -O2 -pipe -fno-plt
+%_ldflags	-Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now
+
+#	filesystem
+%_sysconfdir		/etc
+%_prefix		/usr
+%_lib			/lib
+%_lib64			/lib64
+%_libdir		%{_prefix}/lib
+%_libdir64		%{_prefix}/lib64
+%_docdir		%{_prefix}/share/doc
+%_var			/var
+%_localstatedir		%{_var}
+%_sharedstatedir	%{_var}/lib
+#	rpm 
+%_topdir		/usr/src/LFS-RPM
+%_tmppath		%{_var}/tmp
+%_dbpath		%{_var}/lib/rpm
+%_unique_build_ids	0
+%_build_id_links	none

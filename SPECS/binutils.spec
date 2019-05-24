@@ -1,0 +1,56 @@
+#TARBALL:	http://ftp.gnu.org/gnu/binutils/binutils-2.32.tar.xz
+#MD5SUM:	0d174cdaf85721c5723bf52355be41e6;SOURCES/binutils-2.32.tar.xz
+#-----------------------------------------------------------------------------
+Summary:	The Binutils package contains a linker, an assembler, and other tools for handling object files
+Name:		binutils
+Version:	2.32
+Release:	1
+License:	GPLv3
+URL:		http://ftp.gnu.org
+Group:		LFS/Base
+Vendor:	Elizabeth
+Source0:	http://ftp.gnu.org/gnu/%{name}/%{name}-%{version}.tar.xz
+Requires:	filesystem
+%description
+The Binutils package contains a linker, an assembler, and other tools for handling object files
+#-----------------------------------------------------------------------------
+%prep
+%setup -q -n %{NAME}-%{VERSION}
+%build
+	mkdir build
+	cd build
+	../configure \
+		--prefix=%{_prefix} \
+		--enable-gold \
+		--enable-ld=default \
+		--enable-plugins \
+		--enable-shared \
+		--disable-werror \
+		--enable-64-bit-bfd \
+		--with-system-zlib
+	make %{?_smp_mflags} tooldir=/usr
+%install
+	cd build
+	make DESTDIR=%{buildroot} tooldir=/usr install
+	cd -
+#-----------------------------------------------------------------------------
+#	Copy license/copying file
+	install -D -m644 COPYING3 %{buildroot}/usr/share/licenses/%{name}/LICENSE
+#-----------------------------------------------------------------------------
+#	Create file list
+	rm  %{buildroot}%{_infodir}/dir
+	find %{buildroot} -name '*.la' -delete
+	find "${RPM_BUILD_ROOT}" -not -type d -print > filelist.rpm
+	sed -i "s|^${RPM_BUILD_ROOT}||" filelist.rpm
+	sed -i '/man\/man/d' filelist.rpm
+	sed -i '/\/usr\/share\/info/d' filelist.rpm
+#-----------------------------------------------------------------------------
+%files -f filelist.rpm
+	%defattr(-,root,root)
+	%{_infodir}/*.gz
+	%{_mandir}/man1/*.gz
+#-----------------------------------------------------------------------------
+%changelog
+*	Mon Mar 25 2019 baho-utot <baho-utot@columbus.rr.com> 2.32-1
+*	Tue Jan 09 2018 baho-utot <baho-utot@columbus.rr.com> 2.30-1
+-	Initial build.	First version

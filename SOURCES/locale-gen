@@ -1,0 +1,79 @@
+#!/bin/sh
+set -o errexit	# exit if error...insurance ;)
+set -o nounset	# exit if variable not initalized
+set +h		# disable hashall
+umask 022
+LOCALEGEN=/etc/locale-gen.conf
+LOCALES=/usr/share/i18n/locales
+#-----------------------------------------------------------------------------
+#	Common support functions
+function _die {
+	local _red="\\033[1;31m"
+	local _normal="\\033[0;39m"
+	[ -n "$*" ] && printf "${_red}$*${_normal}\n"
+	false
+	exit 1
+}
+function _msg {
+	printf "%s\n" "${1}"
+	return
+}
+function _msg_line {
+	printf "%s" "${1}"
+	return
+}
+function _msg_failure {
+	local _red="\\033[1;31m"
+	local _normal="\\033[0;39m"
+	printf "${_red}%s${_normal}\n" "FAILURE"
+	exit 2
+}
+function _msg_success {
+	local _green="\\033[1;32m"
+	local _normal="\\033[0;39m"
+	printf "${_green}%s${_normal}\n" "SUCCESS"
+	return
+}
+function _msg_log {
+	printf "\n%s\n\n" "${1}" >> ${_logfile} 2>&1
+	return
+}
+function _end_run {
+	local _green="\\033[1;32m"
+	local _normal="\\033[0;39m"
+	printf "${_green}%s${_normal}\n" "Run Complete"
+	return
+}
+#-----------------------------------------------------------------------------
+#	Functions
+function is_entry_ok {
+    if [ -n "${inputfile}" -a -n "${charmap}" -a -n "${outputpath}" ];
+    then
+        true
+    else
+        _msg "error: Bad entry <${inputfile}>, <${charmap}>, <${outputpath}>"
+        false
+    fi
+}
+#-----------------------------------------------------------------------------
+#	Mainline
+[ -f ${LOCALEGEN} -a -s ${LOCALEGEN} ] || exit 0;
+# Remove all old locale dir and locale-archive
+[ -d /usr/lib/locale ] || install -vdm 755 /usr/lib/locale
+rm -rf /usr/lib/locale/* || true
+_msg "Generating locales..."
+while read inputfile charmap outputpath; do
+	case "${inputfile}" in
+		\#*) continue ;;
+		"") continue ;;
+	esac
+	is_entry_ok || continue
+	_msg_line "	${outputpath}: "
+	case "${outputpath}" in
+		C.UTF-8)	localedef -c -i "${inputfile}" -f "${charmap}" -A /usr/share/locale/locale.alias "${outputpath}" 2> /dev/null || true ;;
+		ja_JP.SIJS)	localedef -c -i "${inputfile}" -f "${charmap}" -A /usr/share/locale/locale.alias "${outputpath}" 2> /dev/null || true ;;
+		*)		localedef -c -i "${inputfile}" -f "${charmap}" -A /usr/share/locale/locale.alias "${outputpath}" || true ;;
+	esac
+	_msg_success
+done < "${LOCALEGEN}"
+_end_run

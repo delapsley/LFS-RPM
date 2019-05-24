@@ -1,0 +1,127 @@
+#-----------------------------------------------------------------------------
+#	Copyright 2019 Baho Utot
+#-----------------------------------------------------------------------------
+#	This program is free software: you can redistribute it and/or modify
+#	it under the terms of the GNU General Public License as published by
+#	the Free Software Foundation, either version 3 of the License, or
+#	(at your option) any later version.
+
+#	This program is distributed in the hope that it will be useful,
+#	but WITHOUT ANY WARRANTY; without even the implied warranty of
+#	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#	GNU General Public License for more details.
+
+#	You should have received a copy of the GNU General Public License
+#	along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#-----------------------------------------------------------------------------
+OVERVIEW:
+	This build tracks linux from scratch version 8.4
+#-----------------------------------------------------------------------------
+REQUIREMENTS:
+	1. git installed on the host
+	2. wget on host system
+	3. Directory for build, mounted at /mnt/lfs
+
+		There will need to be partition mounted there.
+		You will be responsible for that.
+		This build system uses whatever filesystem
+		that is at ${LFS}
+	
+	4. run version-check.sh and install required packages if needed
+#-----------------------------------------------------------------------------
+WARNING:
+	This build system is designed in such a way to not be
+	able to trash your host system.  Mistakes can happen.
+	Not responsible for trashed host system.  You
+	bear all responsibilities for any failures.
+#-----------------------------------------------------------------------------
+GENERAL NOTES:
+	This system was designed and debugged on an AMD64 {x86_64} system
+	and I have not tested it on a i686 system as I no longer have or
+	use such systems.
+
+	The build system installs/work directory:
+	/mnt/lfs/usr/src/LFS-RPM
+
+	This build has a mkinitramfs step ( which requires cpio ) this step
+	creates an initrd so cpu updates and firmware is loaded.
+	Your lfs kernel should be configured to use this.
+
+	This build has Microcode updates for AMD CPUs.
+	To use it make a link to the proper cpu family.
+	See BLFS book for more information.
+
+	I have installed rpm macro files in:
+	/home/lfs/.rpmmacros
+	This makes the rpm environment correct so it builds
+	the base system correctly.
+#-----------------------------------------------------------------------------
+ADDITIONS:
+	cpio			# needed for mkinitramfs
+	mkinitramfs		# to create initrd
+	popt			# needed for rpm
+	python2		# needed for rpm
+	rpm			# package manager
+	wget			# needed to fetch packages
+	firmware-radeon	# firmware for radeon graphics
+	firmware-realtek	# firmware for realtek network
+	firmware-amd-ucode	# microcode updates for AMD CPUs
+#-----------------------------------------------------------------------------
+BUILD PROCEDURE:
+	login as root user
+	fdisk /dev/sdx			partition drive, you need to do this
+	mkfs.ext4 /dev/sdxx			create ext4 filesystem
+	
+	install -vdm 755 /mnt/lfs		create lfs directory
+	mount /dev/sdxx /mnt/lfs		mount partition to work directory
+	install -vdm 755 /mnt/lfs/usr/src	create build directory
+	cd /mnt/lfs/usr/src			goto build directory
+	
+	Now fetch the build system it will go into /mnt/lfs/usr/src/LFS-RPM by default
+	git clone https://github.com/baho-utot/LFS-RPM.git
+	
+	cd LFS-RPM				Lets do this
+	./setup.sh				setup environment and fetches source tarballs
+	./lfs.sh				build it
+	./cleanup.sh				cleanup host
+	
+	Build at this point is complete.
+	All that is needed is to install grub and/or add a menu item in the
+	the grub configuration file /boot/grub.cfg
+This completes the build.
+#-----------------------------------------------------------------------------
+GRUB:
+
+	GPT partitioned drive
+	menuentry 'Linux From Scratch (8.4) (on /dev/sdxx)' {
+		insmod part_gpt
+		insmod ext2
+		set root='hdx,gptx'
+		linux /boot/vmlinuz-4.20.12 root=/dev/sdxx
+		initrd /boot/initrd.img-4.20.12
+	}
+
+	MSDOS/BIOS partitioned drive
+		menuentry 'Linux From Scratch (8.4) (on /dev/sdxx)' {
+		insmod part_msdos
+		insmod ext2
+		set root='hdx,msdosx'
+		linux /boot/vmlinuz-4.20.12 root=/dev/sdxx
+		initrd /boot/initrd.img-4.20.12
+	}
+	Change the x's to the proper drives and partition
+#-----------------------------------------------------------------------------
+INSTALLER SCRIPT:
+	The installer.sh script will take the binary rpms ( chapter 6 ) and
+	install them into a partition that YOU mounted on /mnt.  If you want
+	to install else where then change ROOTPATH="/mnt" to the installation
+	partition mounted by YOU.
+#-----------------------------------------------------------------------------
+SCRIPTS:
+	base.sh*		builds chapter 6
+	cleanup.sh*		cleanup host system after build
+	installer.sh*		install rpm binaries to mounted partition
+	lfs.sh*		builds the whole thing
+	setup.sh*		configure for build
+	tools.sh*		builds chapter 5
+	version-check.sh*	checks host system for requirements
