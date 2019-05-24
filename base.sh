@@ -314,7 +314,6 @@ function _gcc {
 }
 #-----------------------------------------------------------------------------
 #	Main line
-[ $(whoami) = "root" ]	|| die "Not running as user root, you should be!"
 #	Create directories if needed
 [ -e "${LOGS}" ]	||	install -vdm 755 "${LOGS}"
 [ -e "${INFOS}" ]	||	install -vdm 755 "${INFOS}"

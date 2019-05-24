@@ -90,7 +90,7 @@ msg_line "	Unmounting Virtual Kernel File Systems: "
 	mountpoint -q ${LFS}/dev && umount ${LFS}/dev
 msg_success
 msg_line "	Changing file ownership: "
-	chown -R 0:0 ${LFS}
+	chown -R root:root ${LFS}
 msg_success
 msg_line "	Preparing Virtual Kernel File Systems: "
 	[ -d ${LFS}/dev ] || mkdir -p ${LFS}/dev
