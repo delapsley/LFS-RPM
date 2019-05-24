@@ -137,7 +137,7 @@ chmod +x ${ROOTPATH}/tmp/script.sh
 chroot ${ROOTPATH} /usr/bin/env -i \
 	HOME=/root \
 	TERM="${TERM}" \
-	PS1='(intsaller) \u:\w:\$' \
+	PS1='(installer) \u:\w:\$' \
 	PATH=/bin:/usr/bin:/sbin:/usr/sbin \
 	/bin/bash --login -c 'cd /tmp;./script.sh'
 _end_run
