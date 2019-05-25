@@ -1,7 +1,7 @@
 #!/bin/bash
 #-----------------------------------------------------------------------------
 #	  Title: installer.sh
-#	   Date: 2018-09-09
+#	   Date: 2019-05-22
 #	Version: 1.0
 #	 Author: baho-utot@columbus.rr.com
 #	Options:
@@ -116,7 +116,7 @@ cat > ${ROOTPATH}/tmp/script.sh <<- EOF
 	pushd /usr/share/info
 	rm -v dir
 	for f in *; do
-		install-info ${f} dir 2>/dev/null
+		install-info "${f}" dir 2>/dev/null
 	done
 	popd
 	pushd /boot
@@ -137,7 +137,7 @@ chmod +x ${ROOTPATH}/tmp/script.sh
 chroot ${ROOTPATH} /usr/bin/env -i \
 	HOME=/root \
 	TERM="${TERM}" \
-	PS1='(intsaller) \u:\w:\$' \
+	PS1='(installer) \u:\w:\$' \
 	PATH=/bin:/usr/bin:/sbin:/usr/sbin \
 	/bin/bash --login -c 'cd /tmp;./script.sh'
 _end_run
