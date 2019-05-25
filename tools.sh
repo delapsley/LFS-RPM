@@ -1220,18 +1220,19 @@ function Rpm {
 				--prefix=/tools \
 				--program-prefix= \
 				--sysconfdir=/tools/etc \
-				--disable-dependency-tracking \
-				--disable-shared \
-				--disable-silent-rules \
+				--with-crypto=openssl \
+				--without-external-db \
 				--without-archive \
 				--without-lua \
-				--without-plugins \
-				--with-crypto=openssl \
+				--disable-dependency-tracking \
+				--disable-silent-rules \
+				--disable-rpath \
+				--disable-plugins \
+				--disable-inhibit-plugin \
+				--disable-shared \
 				--enable-static \
 				--enable-zstd=no \
-				--enable-lmdb=no \
-				--disable-rpath \
-				--without-external-db >> ${logfile} 2>&1
+				--enable-lmdb=no >> ${logfile} 2>&1
 			msg_success	
 			msg_line "	     Make: "
 				make ${MKFLAGS} >> ${logfile} 2>&1

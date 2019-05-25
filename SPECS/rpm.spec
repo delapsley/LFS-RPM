@@ -1,16 +1,17 @@
-#TARBALL:	http://ftp.rpm.org/releases/rpm-4.14.x/rpm-4.14.1.tar.bz2
+#TARBALL:	ftp.rpm.org/releases/rpm-4.14.x/rpm-4.14.2.1.tar.bz2
 #TARBALL:	http://download.oracle.com/berkeley-db/db-6.0.20.tar.gz
-#MD5SUM:	1058b1a8e96b42b4fc31afc6719c8239;SOURCES/rpm-4.14.1.tar.bz2
+#MD5SUM:	fdb8b8857f103b087b6aed5b78dd9b4f;SOURCES/rpm-4.14.2.1.tar.bz2
 #MD5SUM:	f73afcb308aefde7e6ece4caa87b22a9;SOURCES/db-6.0.20.tar.gz
 #-----------------------------------------------------------------------------
 Summary:	Package manager
 Name:		rpm
-Version:	4.14.1
-Release:	2
+Version:	4.14.2.1
+Release:	1
 License:	GPLv2
 URL:		http://rpm.org
 Group:		LFS/BASE
 Vendor:	Elizabeth
+
 Source0:	http://ftp.rpm.org/releases/rpm-4.14.x/%{name}-%{version}.tar.bz2
 Source1:	http://download.oracle.com/berkeley-db/db-6.0.20.tar.gz
 Source2:	macros
@@ -31,19 +32,14 @@ sed -i 's/--srcdir=$db_dist/--srcdir=$db_dist --with-pic/' db3/configure
 		--with-crypto=openssl \
 		--with-cap \
 		--with-acl \
-		--enable-python \
-		--with-python=2.7 \
 		--without-external-db \
 		--without-archive \
 		--without-lua \
 		--disable-dependency-tracking \
 		--disable-silent-rules \
 		--disable-rpath \
-		--with-python=2.7
-#		--disable-plugins
-#		--with-archive          build rpm2archive - requires libarchive
-#		--with-lua              build with lua support
-#		--with-python=<version>
+		--disable-plugins \
+		--disable-inhibit-plugin
 	make %{?_smp_mflags}
 %install
 	make DESTDIR=%{buildroot} install

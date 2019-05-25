@@ -1,3 +1,75 @@
+Update rpm to 4.14.2.1:
+	*	update setup.sh, download 4.14.2.1 tarball
+	*	update tools.sh, build 4.14.2.1
+	*	update base.sh:	not needed
+	*	update rpm.spec, see below
+	*	drop python dependency
+	
+#TARBALL:	ftp.rpm.org/releases/rpm-4.14.x/rpm-4.14.2.1.tar.bz2
+#TARBALL:	http://download.oracle.com/berkeley-db/db-6.0.20.tar.gz
+#MD5SUM:	fdb8b8857f103b087b6aed5b78dd9b4f;rpm-4.14.2.1.tar.bz2
+#MD5SUM:	f73afcb308aefde7e6ece4caa87b22a9;SOURCES/db-6.0.20.tar.gz
+#-----------------------------------------------------------------------------
+Summary:	Package manager
+Name:		rpm
+Version:	4.14.2.1
+Release:	1
+License:	GPLv2
+URL:		http://rpm.org
+Group:		LFS/BASE
+Vendor:	Elizabeth
+Source0:	ftp.rpm.org/releases/rpm-4.14.x/%{name}-%{version}.tar.bz2
+Source1:	http://download.oracle.com/berkeley-db/db-6.0.20.tar.gz
+Source2:	macros
+Requires:	filesystem
+%description
+Package manager
+#-----------------------------------------------------------------------------
+%prep
+%setup -q -n %{name}-%{version}
+%setup -q -T -D -a 1 -n %{name}-%{version}
+sed -i 's/--srcdir=$db_dist/--srcdir=$db_dist --with-pic/' db3/configure
+%build
+	ln -vs db-6.0.20 db
+	./configure \
+		--prefix=%{_prefix} \
+		--program-prefix= \
+		--sysconfdir=/etc \
+		--with-crypto=openssl \
+		--with-cap \
+		--with-acl \
+		--without-external-db \
+		--without-archive \
+		--without-lua \
+		--disable-dependency-tracking \
+		--disable-silent-rules \
+		--disable-rpath \
+		--disable-plugins \
+		--disable-inhibit-plugin
+		
+#		--enable-python		python bindings
+#		--with-python=2.7		python bindings
+#		--with-archive		build rpm2archive - requires libarchive
+#		--with-lua			build with lua support
+
+	tools.sh:
+		--prefix=/tools \
+		--program-prefix= \
+		--sysconfdir=/tools/etc \
+		--with-crypto=openssl \
+		--without-external-db
+		--without-archive \
+		--without-lua \
+		--disable-dependency-tracking \
+		--disable-silent-rules \
+		--disable-rpath \
+		--disable-plugins \
+		--disable-inhibit-plugin
+		--disable-shared \
+		--enable-static \
+		--enable-zstd=no \
+		--enable-lmdb=no \
+
 
 Read base.spec to get list of packages to install
 
