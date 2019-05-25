@@ -1204,7 +1204,7 @@ function Libelf {
 	return
 }
 function Rpm {
-	local pkg=rpm-4.14.1.tar.bz2
+	local pkg=rpm-4.14.2.1.tar.bz2
 	local pkg_dir=${pkg%%.tar*}
 	local logfile="${TOPDIR}/LOGS/tools-${FUNCNAME}.log"
 	[ -e ${logfile}.complete ] && { msg "Skipping: ${FUNCNAME}";return 0; } || msg "Building: ${FUNCNAME}"
