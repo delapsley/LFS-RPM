@@ -33,8 +33,8 @@ boot process are described in the following sections.
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-#	%%{_infodir}/*.gz
-	%{_mandir}/man8/*.gz
+#	%%{_infodir}/*
+	%{_mandir}/man8/*
 #-----------------------------------------------------------------------------
 %changelog
 *	Sun Apr 07 2019 baho-utot <baho-utot@columbus.rr.com> 20180820-1

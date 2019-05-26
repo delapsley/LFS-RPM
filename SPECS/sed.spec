@@ -43,7 +43,7 @@ The Sed package contains a stream editor
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-	%{_mandir}/man1/*.gz
+	%{_mandir}/man1/*
 #-----------------------------------------------------------------------------
 %changelog
 *	Wed Apr 03 2019 baho-utot <baho-utot@columbus.rr.com> 4.7-1

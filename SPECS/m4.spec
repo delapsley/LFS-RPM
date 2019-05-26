@@ -37,7 +37,7 @@ echo "#define _IO_IN_BACKUP 0x100" >> lib/stdio-impl.h
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-	%{_infodir}/*.gz
+	%{_infodir}/*
 	%{_mandir}/man1/m4.1.gz
 #-----------------------------------------------------------------------------
 %changelog

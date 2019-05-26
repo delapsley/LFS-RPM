@@ -39,8 +39,8 @@ Check is a unit testing framework for C.
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-	%{_infodir}/*.gz
-	%{_mandir}/man1/*.gz
+	%{_infodir}/*
+	%{_mandir}/man1/*
 #-----------------------------------------------------------------------------
 %changelog
 *	Sat Jul 28 2018 baho-utot <baho-utot@columbus.rr.com> 0.12.0-1

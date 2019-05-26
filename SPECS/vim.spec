@@ -71,20 +71,20 @@ echo '#define SYS_VIMRC_FILE "/etc/vimrc"' >> src/feature.h
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-#	%%{_infodir}/*.gz
-	%{_mandir}/man1/*.gz
-	%{_mandir}/fr.ISO8859-1/man1/*.gz
-	%{_mandir}/fr.UTF-8/man1/*.gz
-	%{_mandir}/fr/man1/*.gz	
-	%{_mandir}/it.ISO8859-1/man1/*.gz
-	%{_mandir}/it.UTF-8/man1/*.gz
-	%{_mandir}/it/man1/*.gz
-	%{_mandir}/ja/man1/*.gz
-	%{_mandir}/pl.ISO8859-2/man1/*.gz
-	%{_mandir}/pl.UTF-8/man1/*.gz
-	%{_mandir}/pl/man1/*.gz
-	%{_mandir}/ru.KOI8-R/man1/*.gz
-	%{_mandir}/ru.UTF-8/man1/*.gz
+#	%%{_infodir}/*
+	%{_mandir}/man1/*
+	%{_mandir}/fr.ISO8859-1/man1/*
+	%{_mandir}/fr.UTF-8/man1/*
+	%{_mandir}/fr/man1/*	
+	%{_mandir}/it.ISO8859-1/man1/*
+	%{_mandir}/it.UTF-8/man1/*
+	%{_mandir}/it/man1/*
+	%{_mandir}/ja/man1/*
+	%{_mandir}/pl.ISO8859-2/man1/*
+	%{_mandir}/pl.UTF-8/man1/*
+	%{_mandir}/pl/man1/*
+	%{_mandir}/ru.KOI8-R/man1/*
+	%{_mandir}/ru.UTF-8/man1/*
 #-----------------------------------------------------------------------------
 %changelog
 *	Sat Apr 06 2019 baho-utot <baho-utot@columbus.rr.com> 8.1-1

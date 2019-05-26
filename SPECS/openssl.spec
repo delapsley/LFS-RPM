@@ -47,10 +47,10 @@ email applications and web browsers (for accessing HTTPS sites).
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
    %defattr(-,root,root)
-   	%{_mandir}/man1/*.gz
-	%{_mandir}/man3/*.gz
-	%{_mandir}/man5/*.gz
-	%{_mandir}/man7/*.gz
+   	%{_mandir}/man1/*
+	%{_mandir}/man3/*
+	%{_mandir}/man5/*
+	%{_mandir}/man7/*
 #-----------------------------------------------------------------------------
 %changelog
 *	Sun Feb 03 2019 baho-utot <baho-utot@columbus.rr.com> 1.1.1a-1

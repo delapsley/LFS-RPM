@@ -39,7 +39,7 @@ The Psmisc package contains programs for displaying information about running pr
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-	%{_mandir}/man1/*.gz
+	%{_mandir}/man1/*
 #-----------------------------------------------------------------------------
 %changelog
 *	Fri Apr 05 2019 baho-utot <baho-utot@columbus.rr.com> 23.2-1

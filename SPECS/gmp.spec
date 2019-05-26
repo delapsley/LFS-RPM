@@ -42,7 +42,7 @@ The GMP package contains math libraries. These have useful functions for arbitra
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-	%{_infodir}/*.gz
+	%{_infodir}/*
 #-----------------------------------------------------------------------------
 %changelog
 *	Tue Jan 09 2018 baho-utot <baho-utot@columbus.rr.com> 6.1.2-1

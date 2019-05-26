@@ -34,7 +34,7 @@ The popt package contains the popt libraries which are used by some programs par
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-	%{_mandir}/man3/*.gz
+	%{_mandir}/man3/*
 #-----------------------------------------------------------------------------
 %changelog
 *	Mon Jan 01 2018 baho-utot <baho-utot@columbus.rr.com> 1.16-1

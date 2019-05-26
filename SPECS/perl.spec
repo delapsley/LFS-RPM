@@ -56,8 +56,8 @@ The Perl package contains the Practical Extraction and Report Language.
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-	%{_mandir}/man1/*.gz
-	%{_mandir}/man3/*.gz
+	%{_mandir}/man1/*
+	%{_mandir}/man3/*
 #	%%{_bindir}/%%{NAME}%%{VERSION}
 #	%%{_libdir}/%%{NAME}5/%%{VERSION}/*.pm
 #-----------------------------------------------------------------------------

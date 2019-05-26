@@ -44,8 +44,8 @@ The attr package contains utilities to administer the extended attributes on fil
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-	%{_mandir}/man1/*.gz
-	%{_mandir}/man3/*.gz
+	%{_mandir}/man1/*
+	%{_mandir}/man3/*
 #-----------------------------------------------------------------------------
 %changelog
 *	Wed Apr 03 2018 baho-utot <baho-utot@columbus.rr.com> 2.4.48-1

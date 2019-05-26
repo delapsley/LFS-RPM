@@ -41,7 +41,7 @@ The MPFR package contains functions for multiple precision math.
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-	%{_infodir}/*.gz
+	%{_infodir}/*
 #-----------------------------------------------------------------------------
 %changelog
 *	Tue Mar 26 2019 baho-utot <baho-utot@columbus.rr.com> 4.0.2-1

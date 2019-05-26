@@ -42,7 +42,7 @@ rounding of the result.
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-	%{_infodir}/*.gz
+	%{_infodir}/*
 #-----------------------------------------------------------------------------
 %changelog
 *	Tue Jan 09 2018 baho-utot <baho-utot@columbus.rr.com> 1.1.0-1

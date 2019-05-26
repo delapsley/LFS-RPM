@@ -36,8 +36,8 @@ The Diffutils package contains programs that show the differences between files 
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-	%{_infodir}/*.gz
-	%{_mandir}/man1/*.gz
+	%{_infodir}/*
+	%{_mandir}/man1/*
 #-----------------------------------------------------------------------------
 %changelog
 *	Sat Apr 06 2019 baho-utot <baho-utot@columbus.rr.com> 3.7-1

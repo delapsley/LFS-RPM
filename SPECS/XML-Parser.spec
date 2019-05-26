@@ -35,7 +35,7 @@ The XML::Parser module is a Perl interface to James Clark's XML parser, Expat.
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-	%{_mandir}/man3/*.gz
+	%{_mandir}/man3/*
 #-----------------------------------------------------------------------------
 %changelog
 *	Tue Jan 09 2018 baho-utot <baho-utot@columbus.rr.com> 2.44-1

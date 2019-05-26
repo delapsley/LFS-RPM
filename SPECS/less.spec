@@ -37,7 +37,7 @@ The Less package contains a text file viewer.
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-	%{_mandir}/man1/*.gz
+	%{_mandir}/man1/*
 #-----------------------------------------------------------------------------
 %changelog
 *	Tue Jan 09 2018 baho-utot <baho-utot@columbus.rr.com> 530-1

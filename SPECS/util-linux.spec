@@ -50,11 +50,11 @@ partitions, and messages.
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-#	%%{_infodir}/*.gz
-	%{_mandir}/man1/*.gz
-	%{_mandir}/man3/*.gz
-	%{_mandir}/man5/*.gz
-	%{_mandir}/man8/*.gz
+#	%%{_infodir}/*
+	%{_mandir}/man1/*
+	%{_mandir}/man3/*
+	%{_mandir}/man5/*
+	%{_mandir}/man8/*
 #-----------------------------------------------------------------------------
 %changelog
 *	Sat Apr 06 2019 baho-utot <baho-utot@columbus.rr.com> 2.33.1-1

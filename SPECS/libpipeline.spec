@@ -36,8 +36,8 @@ The Libpipeline package contains a library for manipulating pipelines of subproc
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-#	%%{_infodir}/*.gz
-	%{_mandir}/man3/*.gz
+#	%%{_infodir}/*
+	%{_mandir}/man3/*
 #-----------------------------------------------------------------------------
 %changelog
 *	Sat Apr 06 2019 baho-utot <baho-utot@columbus.rr.com> 1.5.1-1

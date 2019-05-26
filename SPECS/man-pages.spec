@@ -33,14 +33,14 @@ The Man-pages package contains over 1,900 man pages.
 #-----------------------------------------------------------------------------
 %files
 	%defattr(-,root,root)
-	%{_mandir}/man1/*.gz
-	%{_mandir}/man2/*.gz
-	%{_mandir}/man3/*.gz
-	%{_mandir}/man4/*.gz
-	%{_mandir}/man5/*.gz
-	%{_mandir}/man6/*.gz
-	%{_mandir}/man7/*.gz
-	%{_mandir}/man8/*.gz
+	%{_mandir}/man1/*
+	%{_mandir}/man2/*
+	%{_mandir}/man3/*
+	%{_mandir}/man4/*
+	%{_mandir}/man5/*
+	%{_mandir}/man6/*
+	%{_mandir}/man7/*
+	%{_mandir}/man8/*
 	%{_datarootdir}/licenses/man-pages/LICENSE
 #-----------------------------------------------------------------------------
 %changelog

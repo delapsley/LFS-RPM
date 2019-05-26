@@ -50,7 +50,7 @@ The Readline package is a set of libraries that offers command-line editing and 
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-	%{_mandir}/man3/*.gz
+	%{_mandir}/man3/*
 #-----------------------------------------------------------------------------
 %changelog
 *	Mon Mar 25 2019 baho-utot <baho-utot@columbus.rr.com> 8.0-1

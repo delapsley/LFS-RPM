@@ -37,8 +37,8 @@ The Automake package contains programs for generating Makefiles for use with Aut
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-	%{_infodir}/*.gz
-	%{_mandir}/man1/*.gz
+	%{_infodir}/*
+	%{_mandir}/man1/*
 #-----------------------------------------------------------------------------
 %changelog
 *	Fri Apr 05 2019 baho-utot <baho-utot@columbus.rr.com> 1.16.1-1

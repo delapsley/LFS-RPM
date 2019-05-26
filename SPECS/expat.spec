@@ -41,7 +41,7 @@ The Expat package contains a stream oriented C library for parsing XML.
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-	%{_mandir}/man1/*.gz
+	%{_mandir}/man1/*
 #-----------------------------------------------------------------------------
 %changelog
 *	Fri Apr 05 2019 baho-utot <baho-utot@columbus.rr.com> 2.2.6-1

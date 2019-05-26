@@ -66,15 +66,15 @@ sed -i 's/--srcdir=$db_dist/--srcdir=$db_dist --with-pic/' db3/configure
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-	%{_mandir}/man1/*.gz
-	%{_mandir}/man8/*.gz
-	%{_mandir}/fr/man8/*.gz
-	%{_mandir}/ja/man8/*.gz
-	%{_mandir}/ko/man8/*.gz
-	%{_mandir}/pl/man1/*.gz
-	%{_mandir}/pl/man8/*.gz
-	%{_mandir}/ru/man8/*.gz
-	%{_mandir}/sk/man8/*.gz
+	%{_mandir}/man1/*
+	%{_mandir}/man8/*
+	%{_mandir}/fr/man8/*
+	%{_mandir}/ja/man8/*
+	%{_mandir}/ko/man8/*
+	%{_mandir}/pl/man1/*
+	%{_mandir}/pl/man8/*
+	%{_mandir}/ru/man8/*
+	%{_mandir}/sk/man8/*
 #-----------------------------------------------------------------------------
 %changelog
 *	Wed Sep 26 2018 baho-utot <baho-utot@columbus.rr.com> 4.14.1-2

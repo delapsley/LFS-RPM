@@ -46,14 +46,14 @@ The Man-DB package contains programs for finding and viewing man pages.
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-#	%%{_infodir}/*.gz
-	%{_mandir}/man1/*.gz
-	%{_mandir}/man5/*.gz
-	%{_mandir}/man8/*.gz
-	%{_mandir}/man8/*.gz
-	%{_mandir}/it/man1/*.gz
-	%{_mandir}/it/man5/*.gz
-	%{_mandir}/it/man8/*.gz
+#	%%{_infodir}/*
+	%{_mandir}/man1/*
+	%{_mandir}/man5/*
+	%{_mandir}/man8/*
+	%{_mandir}/man8/*
+	%{_mandir}/it/man1/*
+	%{_mandir}/it/man5/*
+	%{_mandir}/it/man8/*
 #-----------------------------------------------------------------------------
 %changelog
 *	Tue Jan 09 2018 baho-utot <baho-utot@columbus.rr.com> 2.8.1-1

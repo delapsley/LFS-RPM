@@ -38,9 +38,9 @@ The Gawk package contains programs for manipulating text files.
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-	%{_infodir}/*.gz
-	%{_mandir}/man1/*.gz
-	%{_mandir}/man3/*.gz
+	%{_infodir}/*
+	%{_mandir}/man1/*
+	%{_mandir}/man3/*
 #-----------------------------------------------------------------------------
 %changelog
 *	Sat Apr 06 2019 baho-utot <baho-utot@columbus.rr.com> 4.2.1-1

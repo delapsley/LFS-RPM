@@ -61,9 +61,9 @@ The GCC package contains the GNU compiler collection, which includes the C and C
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-	%{_infodir}/*.gz
-	%{_mandir}/man1/*.gz
-	%{_mandir}/man7/*.gz
+	%{_infodir}/*
+	%{_mandir}/man1/*
+	%{_mandir}/man7/*
 #-----------------------------------------------------------------------------
 %changelog
 *	Tue Mar 26 2019 baho-utot <baho-utot@columbus.rr.com> 8.2.0-1

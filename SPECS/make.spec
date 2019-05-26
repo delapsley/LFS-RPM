@@ -36,8 +36,8 @@ sed -i '211,217 d; 219,229 d; 232 d' glob/glob.c
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-	%{_infodir}/*.gz
-	%{_mandir}/man1/*.gz
+	%{_infodir}/*
+	%{_mandir}/man1/*
 #-----------------------------------------------------------------------------
 %changelog
 *	Tue Jan 09 2018 baho-utot <baho-utot@columbus.rr.com> 4.2.1-1

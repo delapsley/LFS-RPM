@@ -38,7 +38,7 @@ The Intltool is an internationalization tool used for extracting translatable st
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-	%{_mandir}/man8/*.gz
+	%{_mandir}/man8/*
 #-----------------------------------------------------------------------------
 %changelog
 *	Tue Jan 09 2018 baho-utot <baho-utot@columbus.rr.com> 0.51.0-1

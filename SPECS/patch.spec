@@ -36,8 +36,8 @@ files by applying a patch file typically created by the diff program.
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-#	%%{_infodir}/*.gz
-	%{_mandir}/man1/*.gz
+#	%%{_infodir}/*
+	%{_mandir}/man1/*
 #-----------------------------------------------------------------------------
 %changelog
 *	Tue Jan 09 2018 baho-utot <baho-utot@columbus.rr.com> 2.7.6-1

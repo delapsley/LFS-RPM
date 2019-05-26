@@ -310,8 +310,8 @@ Anything else usually means that the kernel was not configured properly.
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-#	%%{_infodir}/*.gz
-#	%%{_mandir}/man1/*.gz
+#	%%{_infodir}/*
+#	%%{_mandir}/man1/*
 #-----------------------------------------------------------------------------
 %post
 %postun

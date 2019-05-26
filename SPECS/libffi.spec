@@ -40,8 +40,8 @@ This allows a programmer to call any function specified by a call interface desc
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-	%{_infodir}/*.gz
-	%{_mandir}/man3/*.gz
+	%{_infodir}/*
+	%{_mandir}/man3/*
 #-----------------------------------------------------------------------------
 %changelog
 *	Fri Jul 17 2018 baho-utot <baho-utot@columbus.rr.com> 3.2.1-1

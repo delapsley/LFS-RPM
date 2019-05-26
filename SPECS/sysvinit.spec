@@ -40,9 +40,9 @@ shutdown of the system
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-#	%%{_infodir}/*.gz
-	%{_mandir}/man5/*.gz
-	%{_mandir}/man8/*.gz
+#	%%{_infodir}/*
+	%{_mandir}/man5/*
+	%{_mandir}/man8/*
 #-----------------------------------------------------------------------------
 %changelog
 *	Sat Apr 06 2019 baho-utot <baho-utot@columbus.rr.com> 2.93-1

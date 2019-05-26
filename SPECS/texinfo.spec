@@ -39,9 +39,9 @@ sed -i '5481,5485 s/({/(\\{/' tp/Texinfo/Parser.pm
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-	%{_infodir}/*.gz
-	%{_mandir}/man1/*.gz
-	%{_mandir}/man5/*.gz
+	%{_infodir}/*
+	%{_mandir}/man1/*
+	%{_mandir}/man5/*
 %post
 	pushd /usr/share/info
 	rm -v dir

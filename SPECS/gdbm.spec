@@ -41,9 +41,9 @@ retrieving the data by its key and deleting a key along with its data.
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-	%{_infodir}/*.gz
-	%{_mandir}/man1/*.gz
-	%{_mandir}/man3/*.gz
+	%{_infodir}/*
+	%{_mandir}/man1/*
+	%{_mandir}/man3/*
 #-----------------------------------------------------------------------------
 %changelog
 *	Fri Apr 05 2019 baho-utot <baho-utot@columbus.rr.com> 1.18.1-1

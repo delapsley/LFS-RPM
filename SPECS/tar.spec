@@ -40,9 +40,9 @@ sed -i 's/abort.*/FALLTHROUGH;/' src/extract.c
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-	%{_infodir}/*.gz
-	%{_mandir}/man1/*.gz
-	%{_mandir}/man8/*.gz
+	%{_infodir}/*
+	%{_mandir}/man1/*
+	%{_mandir}/man8/*
 
 #-----------------------------------------------------------------------------
 %changelog

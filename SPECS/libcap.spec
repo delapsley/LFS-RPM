@@ -41,9 +41,9 @@ of the all powerful root privilege into a set of distinct privileges.
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-	%{_mandir}/man1/*.gz
-	%{_mandir}/man3/*.gz
-	%{_mandir}/man8/*.gz
+	%{_mandir}/man1/*
+	%{_mandir}/man3/*
+	%{_mandir}/man8/*
 #-----------------------------------------------------------------------------
 %changelog
 *	Wed Apr 03 2019 baho-utot <baho-utot@columbus.rr.com> 2.26-1

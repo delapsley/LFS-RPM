@@ -49,7 +49,7 @@ cd %{_builddir}
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-	%{_mandir}/man1/*.gz
+	%{_mandir}/man1/*
 #-----------------------------------------------------------------------------
 %changelog
 *	Wed Sep 26 2018 baho-utot <baho-utot@columbus.rr.com> python2-2.7.14-1

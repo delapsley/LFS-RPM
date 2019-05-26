@@ -34,8 +34,8 @@ Firmware for radeon graphics cards
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-#	%%{_infodir}/*.gz
-#	%%{_mandir}/man1/*.gz
+#	%%{_infodir}/*
+#	%%{_mandir}/man1/*
 #-----------------------------------------------------------------------------
 %changelog
 *	Sun Jul 29 2018 baho-utot <baho-utot@columbus.rr.com> 1.00-1

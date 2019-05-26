@@ -44,10 +44,10 @@ The Procps-ng package contains programs for monitoring processes.
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-	%{_mandir}/man1/*.gz
-	%{_mandir}/man3/*.gz
-	%{_mandir}/man5/*.gz
-	%{_mandir}/man8/*.gz
+	%{_mandir}/man1/*
+	%{_mandir}/man3/*
+	%{_mandir}/man5/*
+	%{_mandir}/man8/*
 #-----------------------------------------------------------------------------
 %changelog
 *	Sat Apr 06 2019 baho-utot <baho-utot@columbus.rr.com> 3.3.15-1

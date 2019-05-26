@@ -37,9 +37,9 @@ The IPRoute2 package contains programs for basic and advanced IPV4-based network
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-	%{_mandir}/man3/*.gz
-	%{_mandir}/man7/*.gz
-	%{_mandir}/man8/*.gz
+	%{_mandir}/man3/*
+	%{_mandir}/man7/*
+	%{_mandir}/man8/*
 #-----------------------------------------------------------------------------
 %changelog
 *	Sat Apr 06 2019 baho-utot <baho-utot@columbus.rr.com> 4.20.0-1

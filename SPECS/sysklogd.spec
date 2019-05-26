@@ -61,8 +61,8 @@ EOF
 %files -f filelist.rpm
 	%defattr(-,root,root)
 	%config(noreplace) /etc/syslog.conf
-	%{_mandir}/man5/*.gz
-	%{_mandir}/man8/*.gz
+	%{_mandir}/man5/*
+	%{_mandir}/man8/*
 #-----------------------------------------------------------------------------
 %changelog
 *	Tue Jan 09 2018 baho-utot <baho-utot@columbus.rr.com> 1.5.1-1

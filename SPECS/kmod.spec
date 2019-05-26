@@ -47,8 +47,8 @@ The Kmod package contains libraries and utilities for loading kernel modules
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-	%{_mandir}/man5/*.gz
-	%{_mandir}/man8/*.gz
+	%{_mandir}/man5/*
+	%{_mandir}/man8/*
 #-----------------------------------------------------------------------------
 %changelog
 *	Fri Apr 05 2019 baho-utot <baho-utot@columbus.rr.com> 26-1

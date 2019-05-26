@@ -45,9 +45,9 @@ used to define more fine-grained discretionary access rights for files and direc
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-	%{_mandir}/man1/*.gz
-	%{_mandir}/man3/*.gz
-	%{_mandir}/man5/*.gz
+	%{_mandir}/man1/*
+	%{_mandir}/man3/*
+	%{_mandir}/man5/*
 #-----------------------------------------------------------------------------
 %changelog
 *	Wed Apr 03 2019 baho-utot <baho-utot@columbus.rr.com> 2.2.53-1

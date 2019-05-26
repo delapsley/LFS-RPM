@@ -39,8 +39,8 @@ The Wget package contains a utility useful for non-interactive downloading of fi
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-	%{_infodir}/*.gz
-	%{_mandir}/man1/*.gz
+	%{_infodir}/*
+	%{_mandir}/man1/*
 %post
 	pushd /usr/share/info
 	rm -v dir

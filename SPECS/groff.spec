@@ -39,10 +39,10 @@ The Groff package contains programs for processing and formatting text.
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-	%{_infodir}/*.gz
-	%{_mandir}/man1/*.gz
-	%{_mandir}/man5/*.gz
-	%{_mandir}/man7/*.gz
+	%{_infodir}/*
+	%{_mandir}/man1/*
+	%{_mandir}/man5/*
+	%{_mandir}/man7/*
 #-----------------------------------------------------------------------------
 %changelog
 *	Sat Apr 06 2019 baho-utot <baho-utot@columbus.rr.com> 1.22.4-1

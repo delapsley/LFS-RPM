@@ -55,9 +55,9 @@ sed -i '/test.lock/s/^/#/' gnulib-tests/gnulib.mk
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-	%{_infodir}/*.gz
-	%{_mandir}/man1/*.gz
-	%{_mandir}/man8/*.gz
+	%{_infodir}/*
+	%{_mandir}/man1/*
+	%{_mandir}/man8/*
 #-----------------------------------------------------------------------------
 %changelog
 *	Sat Apr 06 2019 baho-utot <baho-utot@columbus.rr.com> 8.30-1

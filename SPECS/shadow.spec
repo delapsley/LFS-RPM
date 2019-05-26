@@ -59,10 +59,10 @@ The Shadow package contains programs for handling passwords in a secure way.
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-	%{_mandir}/man1/*.gz
-	%{_mandir}/man3/*.gz
-	%{_mandir}/man5/*.gz
-	%{_mandir}/man8/*.gz
+	%{_mandir}/man1/*
+	%{_mandir}/man3/*
+	%{_mandir}/man5/*
+	%{_mandir}/man8/*
 %post
 	pwconv
 	grpconv

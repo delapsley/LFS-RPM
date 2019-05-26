@@ -40,8 +40,8 @@ This is useful for synchronizing large file archives over a network.
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-	%{_mandir}/man1/*.gz
-	%{_mandir}/man5/*.gz
+	%{_mandir}/man1/*
+	%{_mandir}/man5/*
 #-----------------------------------------------------------------------------
 %changelog
 *	Mon Feb 04 2019 baho-utot <baho-utot@columbus.rr.com> 3.1.3-1

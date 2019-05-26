@@ -56,10 +56,10 @@ The Ncurses package contains libraries for terminal-independent handling of char
 #-----------------------------------------------------------------------------
 %files -f filelist.rpm
 	%defattr(-,root,root)
-	%{_mandir}/man1/*.gz
-	%{_mandir}/man3/*.gz
-	%{_mandir}/man5/*.gz
-	%{_mandir}/man7/*.gz
+	%{_mandir}/man1/*
+	%{_mandir}/man3/*
+	%{_mandir}/man5/*
+	%{_mandir}/man7/*
 #-----------------------------------------------------------------------------
 %changelog
 *	Tue Jan 09 2018 baho-utot <baho-utot@columbus.rr.com> 6.1-1
