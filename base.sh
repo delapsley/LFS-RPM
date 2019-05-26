@@ -401,7 +401,6 @@ LIST+="mkinitramfs "		#	mkinitramfs
 LIST+="linux "		#	8.3. Linux-4.20.12
 #	ADDONS
 LIST+="popt "			#	popt
-LIST+="python2 "		#	python2
 LIST+="rpm "			#	rpm
 LIST+="wget "			#	wget
 LIST+="firmware-radeon "	#	firmware-radeon
