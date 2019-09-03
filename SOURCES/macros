@@ -10,12 +10,12 @@
 %_sysconfdir		/etc
 %_prefix		/usr
 %_lib			/lib
-%_lib64			/lib64
+%_lib64		/lib64
 %_libdir		%{_prefix}/lib
 %_libdir64		%{_prefix}/lib64
 %_docdir		%{_prefix}/share/doc
 %_var			/var
-%_localstatedir		%{_var}
+%_localstatedir	%{_var}
 %_sharedstatedir	%{_var}/lib
 #	rpm 
 %_topdir		/usr/src/LFS-RPM

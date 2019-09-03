@@ -24,7 +24,7 @@ for the directories.
 #	root directories
 install -vdm 755 %{buildroot}/{bin,boot,dev,etc,home,lib,lib64,media,mnt,opt,proc,root,run,sbin,srv,sys,tmp,usr,var}
 #	etc directories
-install -vdm 755 %{buildroot}/etc/{ld.so.conf.d,opt,profile.d,skel,sysconfig}
+install -vdm 755 %{buildroot}/etc/{ld.so.conf.d,profile.d,skel,sysconfig}
 #	init script directories - this is for chkconfig
 install -vdm 755 %{buildroot}/etc/rc.d/{init.d,rc0.d,rc1.d,rc2.d,rc3.d,rc4.d,rc5.d,rc6.d,rc7.d}
 ln -vs rc7.d %{buildroot}/etc/rc.d/rcS.d
