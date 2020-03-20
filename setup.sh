@@ -121,9 +121,9 @@ function _chapter_3 {
 	while IFS= read -r i; do
 		list+="${i} "
 	done < "${TOPDIR}/BOOK/wget-list"
-	list+="http://rpm5.org/files/popt/popt-1.16.tar.gz "
+	list+="https://src.fedoraproject.org/repo/pkgs/popt/popt-1.16.tar.gz/3743beefa3dd6247a73f8f7a32c14c33/popt-1.16.tar.gz"
 	list+="http://ftp.rpm.org/releases/rpm-4.14.x/rpm-4.14.2.1.tar.bz2 "
-	list+="http://download.oracle.com/berkeley-db/db-6.0.20.tar.gz "
+	list+="https://ftp.osuosl.org/pub/blfs/conglomeration/db/db-6.0.20.tar.gz"
 	list+="https://ftp.gnu.org/gnu/cpio/cpio-2.12.tar.bz2 "
 	list+="https://ftp.gnu.org/gnu/wget/wget-1.20.1.tar.gz "
 	for i in ${list}; do

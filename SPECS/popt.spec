@@ -6,10 +6,11 @@ Name:		popt
 Version:	1.16
 Release:	1
 License:	GPL
-URL:		http://rpm5.org/files/popt
+URL:		https://src.fedoraproject.org/repo/pkgs/popt
 Group:		BLFS/General_Libraries 
 Vendor:	Elizabeth
 Source0:	http://rpm5.org/files/popt/%{name}-%{version}.tar.gz
+Source0:	https://src.fedoraproject.org/repo/pkgs/popt/%{name}-%{version}.tar.gz/3743beefa3dd6247a73f8f7a32c14c33/%{name}-%{version}.tar.gz
 Requires:	filesystem
 %description
 The popt package contains the popt libraries which are used by some programs parse command-line options.
